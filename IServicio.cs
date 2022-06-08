@@ -3,7 +3,10 @@ namespace ProyectoPOO
 {
     interface IServicio
     {
-        void Elegir_Sabor(int Sabor_postre);
-        void Calcular_precio(int Cantidad_postre);
+        public void Panel_opciones_inicio();
+        public void Cambios_opciones(string Numero_opcion);
+        public void Cancelar_pedido();
+        public void Verificar_pedido();
+        public void Menu_inicio();
     }
 }
