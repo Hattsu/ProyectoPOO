@@ -1,7 +1,7 @@
 using System;
 namespace ProyectoPOO
 {
-    class Usuarios
+    class Usuarios : IServicio
     {
         private string Nombres{set; get;}
         private string Apellidos{set; get;}
@@ -15,16 +15,16 @@ namespace ProyectoPOO
             this.Telefono = Telefono;
             this.Dirección = Dirección;
         }
-        public void Panel_usuario()
+        public void Panel_opciones_inicio()
         {
             string Numero_opcion;
             Console.WriteLine("Si desea ingresar sus datos de usuario o modificarlos escriba (1)");
             Console.WriteLine("Si desea Mostrarlos escriba (2)");
             Console.WriteLine("Si desea pasar al siguiente panel escriba (3)");
             Numero_opcion = Console.ReadLine();
-            Cambios_usuario(Numero_opcion);
+            Cambios_opciones(Numero_opcion);
         }
-        public void Cambios_usuario(string Numero_opcion)
+        public void Cambios_opciones(string Numero_opcion)
         {
             switch (Numero_opcion.ToString())
              {
@@ -53,7 +53,7 @@ namespace ProyectoPOO
 
             Console.WriteLine("Ingrese la direccion del cliente: ");
                 Dirección = Console.ReadLine();
-            Panel_usuario();
+            Panel_opciones_inicio();
         }
 
         public void Imprimir_datos()
@@ -64,7 +64,7 @@ namespace ProyectoPOO
             Console.WriteLine("Nombres: "+Nombres+"\nApellidos: "+Apellidos);
             Console.WriteLine("Número de telefono-celular: "+Telefono);
             Console.WriteLine("Dirección: "+Dirección);
-            Panel_usuario();
+            Panel_opciones_inicio();
         }
     }
 }
