@@ -5,14 +5,24 @@ namespace ProyectoPOO
     {
         public static void Main(string[] args)
         {
+            //Constructores
             Usuarios usuarios = new Usuarios("", "", 0, "");
-            usuarios.Panel_usuario();
             Pasteles pasteles = new Pasteles("", "Pastel", 0, 4, "");
-            pasteles.Panel_opciones_inicio();
             Cupcake cupcake = new Cupcake("", "Cupcake", 0, 0.25, "");
-            cupcake.Panel_opciones_inicio();
             Helados helados = new Helados("", "Helado", 0, 0.75, "");
-            helados.Panel_opciones_inicio();
+
+            //Listas
+            List<IServicio> Panel_lista = new List<IServicio>();
+            Panel_lista.Add(usuarios);
+            Panel_lista.Add(pasteles);
+            Panel_lista.Add(cupcake);
+            Panel_lista.Add(helados);
+            
+            //For each para usar el metodo que inicia los paneles
+            foreach(IServicio Item in Panel_lista)
+            {
+                Item.Panel_opciones_inicio();
+            }
         }
     }
 }
